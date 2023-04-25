@@ -1,0 +1,1105 @@
+*{
+
+    padding: 0;
+    margin: 0;
+
+}
+
+header {
+    background-color: #000;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: center bottom;
+    transition: width 0.2s ease-out;
+  }
+  
+  nav a:hover {
+    color: #98ece8;
+  }
+  
+  nav a:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 578px) {
+    .logo {
+      display: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    nav li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    nav a {
+      font-size: 12px;
+      text-align: center;
+      display: block;
+      padding: 10px 16px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .logo img {
+      height: 70px;
+    }
+    nav a {
+      font-size: 19px;
+      padding: 10px 20px;
+    }
+  }
+
+.container{
+width: 100%;
+height: 1000px;
+display: grid;
+grid-template-rows: 400px 150px;
+
+}
+
+/********************************NUMBER 1 LAYER  (image_layer)*********************************************/
+
+.image_layer{
+
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+    .resto_image_1{
+
+ 
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    }
+            .resto_image_1 img{
+
+                width: 567px;
+                height: 350px;
+                border-radius: 10px;
+               
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+    .resto_image_2{
+
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+        .map{
+
+            width: 600px;
+            background-color: rgb(255, 255, 255);
+            height: 380px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+
+
+
+
+/********************************NUMBER 2 LAYER  (details_layer)*********************************************/
+.details_layer{
+
+background-color: rgb(255, 255, 255);
+display: grid;
+grid-template-columns: 1fr 1fr;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+}
+    .resto_name_address_city_box{
+
+    
+        display: grid;
+        grid-template-rows: 50px 30px;
+    }
+            .resto_name_BOX{
+
+               
+
+            }
+                    .resto_name{
+
+                        font-size: 30px;
+                        margin-left: 10px;
+                        font-weight: bold;
+                        letter-spacing: 1.5px;
+                    }
+
+            .address_BOX{
+
+             margin-left: 10px;
+             margin-top: 10px;
+
+            }
+          
+                    .address span{
+
+                        font-size: 15px;
+                        
+                        letter-spacing: 1.2px;
+                        
+                        
+                    }
+
+          
+
+    .rating_cuisine_bookmark_direction{
+
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+    }
+
+            .rating_and_cuisine_box{
+
+                
+                display: grid;grid-template-columns: 120px 1fr;
+                border-bottom: solid rgba(0, 0, 0, 0.486) 1px;
+            }
+                    .rating_box{
+
+             
+                        display: grid;
+                        justify-items: center;
+                        align-items: center;
+                        
+                    }
+                            .rating{
+
+                              
+                                
+                                
+                            }
+
+                            .rating img{
+
+                                width: 30px;
+                                height: 30px;
+                                margin-right: 8px;
+                            }
+
+                    .cuisine_box{
+
+                        
+                        display: grid;align-items: center;
+
+                    }
+                            .cuisine_type{
+
+                             
+                            
+                               
+                            }
+
+                            .cuisine_type img{
+
+                                width: 30px;
+                                height: 30px;
+                                margin-right: 8px;
+                            }
+
+.bookmark_direction_share_box{
+
+
+    display: grid;
+    grid-template-columns: 130px 120px 1fr;
+    
+}       
+        .Bookmark{
+
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            margin-left: 5px;
+            
+
+        }
+
+                .Bookmark button{
+
+                    width: 90px;
+                    height: 32px;
+                    
+                    border-radius: 5px;
+                }
+
+                .Bookmark button img{
+
+                    width: 15px;
+                    height: 15px;
+                    position: relative;
+                    top: 2px;
+                    
+
+                }
+
+        .Direction{
+
+            display: grid;
+            justify-items: center;
+            align-items: center;
+
+
+        }
+        
+                .Direction button{
+
+                    width: 90px;
+                    height: 32px;
+                    
+                    
+                    border-radius: 5px;
+                }
+
+                .Direction button img{
+
+
+                    width: 17px;
+                    height: 17px;
+                    position: relative;
+                    top: 4px;
+
+                }
+        .Share{
+
+            display: grid;
+          
+            align-items: center;
+            margin-left: 15px;
+
+        }
+
+                .Share button{
+
+                    width: 90px;
+                    height: 32px;
+                    
+                    border-radius: 5px;
+                   
+                }
+
+
+                .Share button img{
+
+
+                    width: 17px;
+                    height: 17px;
+                    position: relative;
+                    top: 2px;
+
+                }
+
+
+                    
+                
+
+
+
+/********************************NUMBER 1 LAYER  (reviews_and_map_layer*********************************************/
+.reviews_and_map_layer{
+
+background-color: aliceblue;
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+
+}
+    .insert_comment_section{
+
+        
+        display: grid;
+        grid-template-rows: 90px;
+        
+    }
+
+            .insert_comment_section_BOX{
+
+                background-color: aliceblue;
+                display: grid;
+                grid-template-columns: 90px 1fr;
+                
+                
+                
+                
+            }
+
+                .username_icon_BOX{
+                    margin-top: 10px;
+                  
+                    display: grid;
+                    justify-items: center;
+                    align-items: center;
+                }
+
+                        .username_icon img{
+
+                            width: 60px;
+                            height: 60px;
+
+                        }
+
+                .write_a_comment{
+                    margin-top: 10px;
+                  
+                    display: grid;
+                    
+                    
+                }
+                    .input_box textarea{
+                        resize: none;
+                        width: 485px;
+                        border: none;
+                        border-bottom: 2px solid black;
+                        outline: none;
+                        background-color: transparent;
+                        margin-top: 20px;
+                        height: 15px;
+                    
+                    }
+                    .submit_box{
+
+                        display: grid;
+                        grid-template-columns: 1.5fr 0.5fr;
+                    }
+                            .submit{
+
+                             
+
+                            }
+                            .submit input{
+
+                                background-color: black;
+                                width: 80px;
+                                height: 30px;
+                                color: white;
+                                border-radius: 20px;
+                                
+
+                            }
+            
+
+                            .review_section_BOX{
+
+                                background-color: rgb(255, 255, 255);
+
+                            }
+
+                             .review{
+
+                                
+                        
+                                height: 12vh;
+                                display: grid;
+                                grid-template-rows: 1fr 1fr;
+                                margin-bottom: 60px;
+                                margin-top: 20px;
+                             }
+
+                                    .profile{
+
+                                        display: grid;
+                                        grid-template-columns: 58px 320px 1fr 1fr;
+                                        
+                                    }
+                                        .user_icon_for_review_BOX{
+
+                                       
+
+                                        }
+
+                                        
+                                    .user_icon_for_review img{
+
+                                        width: 50px;
+                                        height: 50px;
+
+                                    }
+                                        .username{
+
+                                         
+                                            
+                                        }
+
+                                        .username p{
+
+                                            position: relative;
+                                            top: 7px;
+                                            font-weight: bold;
+                                            font-size: 20px;
+
+                                        }
+
+                                        .null1{
+
+                            
+
+                                        }
+                                           
+                                        .date{
+
+                                            font-size: 12px;
+                                            margin-top: 8px;
+                                            margin-left: 2px;
+
+                                        }
+
+                                    
+
+                                    
+
+                                        
+                             
+
+                                    .comment_box{
+
+                                        background-color: rgb(223, 223, 223);
+                                        border-bottom: solid black 1px;
+
+                                    }
+
+                                    .comment{
+
+                                        margin-left: 60px;
+                                        margin-top: 20px;
+                                        word-wrap: break-word; /* Wrap words that exceed the width of the element */
+                                        max-width: 500px; 
+                                    }
+
+
+
+                                        
+                                        .dropdown {
+                                            position: relative;
+                                            display: inline-block;
+                                            left: 15px;
+                                        }
+                                        
+                                      .dropbtn {
+                                        background-color: transparent;
+                                        color: #333;
+                                        font-size: 25px;
+                                        border: none;
+                                        cursor: pointer;
+                                      }
+                                      
+                                      .dropdown-content {
+                                        display: none;
+                                        position: absolute;
+                                        z-index: 1;
+                                      }
+                                      
+                                      .dropdown-content .delete-btn {
+                                        color: rgb(0, 0, 0);
+                                      }
+                                      
+                                      .dropdown.open .dropdown-content {
+                                        display: block;
+                                      }
+
+                                      .container_info {
+                                        width: 629px;
+                                        height: 450px;
+                                        border: 1px solid black;
+                                        overflow: hidden;
+                                      }
+                                      
+                                      .tabs {
+                                        overflow: hidden;
+                                        border-bottom: 1px solid rgb(0, 0, 0);
+                                      }
+                                      
+                                      .tablink {
+                                        background-color: rgb(24, 16, 16);
+                                        float: left;
+                                        border: 1px solid black;
+                                        padding: 8px 12px;
+                                        margin-right: 3px;
+                                        cursor: pointer;
+                                        color: white;
+                                      }
+                                      
+                                      .tablink:hover {
+                                        background-color: #ccc;
+                                      }
+                                      
+                                      .tabcontent {
+                                        display: none;
+                                        padding: 20px;
+                                      }
+                                      
+                                      .tabcontent h3 {
+                                        margin-top: 0;
+                                      }
+                                      
+                                     
+                                      
+                                    
+/********************************MEDIA QUERY***********************************/
+
+@media screen and (max-width: 390px) {
+
+
+    .navigation_bar_container{
+
+        width: 100%;
+        height: 98px;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 0px 10px 1fr;
+       
+        
+    }
+
+
+            
+        .logo{
+            display: grid;
+            
+            align-items: center;
+            width: 300px;
+            height: 80px;
+            background-color: rgb(0, 0, 0);
+            margin-top: 5px;
+            margin-left: 2px;
+        }
+        .logo img{
+
+            width: 0px;
+            height: 0px;
+        }
+
+        .navigator{
+
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+                        .home{
+
+                           
+                            border-bottom: solid white 1px;
+                            height: 35px;
+                            margin-left: 40px;
+
+
+                        }
+
+                        .home a{
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: white;
+
+                        }
+
+
+                        .bookmarks{
+                            border-bottom: solid white 1px;
+                            height: 35px;
+                           
+                        }
+                        .bookmarks a{
+
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: white;
+
+
+                        }
+                        .Log_out{
+
+                            border-bottom: solid white 1px;
+                            height: 35px;
+                            margin-right: 40px;
+                            
+                        }
+                        .Log_out a{
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: white;
+                            
+                         
+                            
+                        }
+
+                        .log_in{
+
+                            border-bottom: solid white 1px;
+                            height: 35px;
+                            margin-left: 20px;
+                           
+                        }
+
+                        .log_in a{
+                            
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: white;
+                            
+                        }
+
+                        .sign_up{
+
+                            border-bottom: solid white 1px;
+                            height: 35px;
+                         
+
+                        }
+                        
+                        .sign_up a{
+
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: white;
+
+                        }
+
+
+.container{
+
+    grid-template-rows: 380px 190px;
+
+    }
+
+.image_layer{
+
+
+grid-template-columns: 1fr;
+
+}
+    .resto_image_1 img{
+
+        width: 300px;
+        height: 150px;
+
+
+
+    }
+
+    .resto_image_2{
+
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+        .map{
+
+            width: 300px;
+           
+            height: 170px;
+        
+        }
+
+.details_layer{
+
+
+    grid-template-columns: 1fr;
+
+    
+    }
+
+    .resto_name{
+
+        font-size: 22px;
+       
+        color: white;
+    }
+
+    .resto_name_address_city_box{
+
+        background-color: rgb(0, 0, 0);/***remove it later***/
+        display: grid;
+        grid-template-rows: 30px 30px;
+        color: white;
+        
+    }
+            .resto_name_BOX{
+
+               
+
+            }
+                  
+            .address_BOX{
+
+             
+
+            }
+            .address_BOX span{
+
+                font-weight: bold;
+
+            }
+                    .address{
+                       
+                        font-size: 12px;
+                        
+                        letter-spacing: 1px;
+                        
+                    }
+
+                    .address span{
+
+                        font-size: 10px;
+                        
+                    }
+
+                    .address_BOX img{
+
+                        width: 0;
+                        height: 0;
+                        margin-right: 0;
+                        
+                    }
+         
+
+               
+
+    
+.rating_cuisine_bookmark_direction{
+
+         display: grid;
+        grid-template-rows: 60px 1fr;
+                
+        }
+    
+
+.reviews_and_map_layer{
+
+    grid-template-columns: 1fr;
+
+}
+
+.rating_and_cuisine_box{
+
+                
+    display: grid;grid-template-columns: 120px 1fr;
+    border-bottom: solid rgba(0, 0, 0, 0.486) 1px;
+}
+        .rating_box{
+
+ 
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            
+        }
+                .rating{
+
+                  
+                    
+                    
+                }
+
+                .rating img{
+
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 8px;
+                }
+
+        .cuisine_box{
+
+            
+            display: grid;align-items: center;
+
+        }
+                .cuisine_type{
+
+                 
+                
+                   
+                }
+
+                .cuisine_type img{
+
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 8px;
+                }
+
+
+.Bookmark{
+
+    
+
+}
+
+        .Bookmark button{
+
+            width: 80px;
+            height: 25px;
+            font-size: 12px;
+        }
+
+        .Bookmark button img{
+
+            width: 15px;
+            height: 15px;
+           
+
+        }
+
+.Direction{
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+
+}
+
+        .Direction button{
+
+            width: 80px;
+            height: 25px;
+            font-size: 12px;
+        }
+
+        .Direction button img{
+
+
+            width: 15px;
+            height: 15px;
+            
+
+        }
+.Share{
+
+    display: grid;
+  
+    align-items: center;
+    margin-left: 15px;
+
+}
+
+        .Share button{
+
+            width: 80px;
+            height: 25px;
+            font-size: 12px;
+            
+        }
+
+
+        .Share button img{
+
+
+            width: 15px;
+            height: 15px;
+            
+        }
+
+        
+         
+                            .username_icon_BOX{
+                                margin-top: 10px;
+                              
+                                display: grid;
+                                justify-items: center;
+                                align-items: center;
+                            }
+            
+                                    .username_icon img{
+            
+                                        width: 50px;
+                                        height: 50px;
+            
+                                    }
+            
+                            .write_a_comment{
+                                margin-top: 5px;
+                              
+                                display: grid;
+                                
+                                
+                            }
+                                .input_box textarea{
+                                    resize: none;
+                                    width: 240px;
+                                    border: none;
+                                    border-bottom: 2px solid black;
+                                    outline: none;
+                                    background-color: transparent;
+                                    margin-top: 20px;
+                                    height: 15px;
+                                
+                                }
+                                .submit_box{
+            
+                                    display: grid;
+                                    grid-template-columns: 180px 1fr;
+                                }
+                                        .submit{
+            
+                                         
+            
+                                        }
+                                        .submit input{
+            
+                                            background-color: black;
+                                            width: 60px;
+                                            height: 23px;
+                                            color: white;
+                                            border-radius: 20px;
+                                            font-size: 10px;
+            
+                                        }
+                                        
+                                        .review_section_BOX{
+
+                                            background-color: aliceblue;
+                                           
+                                        }
+                                         .review{
+            
+                                           
+                                            height: 12vh;
+                                            display: grid;
+                                            grid-template-rows: 1fr 1fr;
+                                            margin-bottom: 60px;
+                                            
+                                            
+                                         }
+            
+                                                .profile{
+            
+                                                    display: grid;
+                                                    grid-template-columns: 58px 200px 1fr 1fr;
+                                                    
+                                                }
+                                                    .user_icon_for_review_BOX{
+            
+                                                   
+            
+                                                    }
+
+
+                                                    .username{
+            
+                                                     
+                                                        
+                                                    }
+            
+                                                    .username p{
+            
+                                                        position: relative;
+                                                        top: 7px;
+                                                        font-weight: bold;
+                                                        font-size: 15px;
+            
+                                                    }
+            
+                                                    .null1{
+            
+                                        
+            
+                                                    }
+                                                       
+                                                    .date{
+            
+                                                        font-size: 9px;
+                                                        margin-top: 8px;
+                                                        margin-left: 2px;
+            
+                                                    }
+            
+                                                
+            
+                                                
+            
+                                                    
+                                         
+            
+                                                .comment_box{
+            
+                                                 
+                                                    border-bottom: solid black 1px;
+                                                    
+                                                }
+            
+                                                .comment{
+            
+                                                    margin-left: 40px;
+                                                    margin-top: 20px;
+                                                    word-wrap: break-word; /* Wrap words that exceed the width of the element */
+                                                    max-width: 300px; 
+                                                    font-size: 10px;
+                                                }
+            
+            
+            
+                                                .user_icon_for_review img{
+            
+                                                    width: 45px;
+                                                    height: 45px;
+            
+                                                }
+                                                    
+                                                    .dropdown {
+                                                        position: relative;
+                                                        display: inline-block;
+                                                        left: 15px;
+                                                    }
+}
+
+
+
+
+  

@@ -1,0 +1,272 @@
+*{
+
+    padding: 0;
+    margin: 0;
+
+}
+
+/***********NAVIGATION BAR*******************************/
+header {
+  background-color: #000;
+  height: 98px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-right: 20px;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+nav a:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: center bottom;
+  transition: width 0.2s ease-out;
+}
+
+nav a:hover {
+  color: #98ece8;
+}
+
+nav a:hover:before {
+  width: 100%;
+}
+
+@media screen and (max-width: 578px) {
+  .logo {
+    display: none;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  nav li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  nav a {
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo img {
+    height: 70px;
+  }
+  nav a {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+}
+  /***********NAVIGATION BAR*******************************/
+
+
+/***************Body_container****************************/
+
+
+.Body_container{
+
+width: 100%;
+height: 1000px;
+background-color: antiquewhite;
+background-image: url(https://cdn.wallpapersafari.com/92/77/F7XPnJ.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: grid;
+justify-items: center;
+align-items: center;
+
+}
+
+/* Search container */
+.search-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.226);
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo */
+  .logo {
+    width: 100px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+  }
+  
+  /* Input container */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Location and cuisine inputs */
+  .location-input, .cuisine-input {
+    width: 160%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.349);
+    font-size: 16px;
+    color: rgb(245, 240, 240);
+    text-align: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Price range selector */
+  .price-range {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .price-range label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .price-range select {
+    width: 150px;
+    padding: 12px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.822);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Submit button */
+  .submit-button {
+    width: 100%;
+    background-color: #3F51B5;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submit-button:hover {
+    background-color: #2c3e50;
+  }
+  
+  /* Additional styling */
+  .search-container:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    border-radius: 10px;
+  }
+  
+  .location-input, .cuisine-input, .price-range select {
+    border: none;
+    border-bottom: 2px solid #000000;
+  }
+  
+  .location-input:focus, .cuisine-input:focus, .price-range select:focus {
+    border-color: #ffffff;
+    outline: none;
+    
+  }
+  
+  /* Gradient background for submit button */
+.submit-button {
+    background: linear-gradient(to bottom right, #5f5d5de1, #000000e5);
+    color: #FFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .submit-button:hover {
+    background: linear-gradient(to bottom right, #525353, #0a0a0a);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 600px) {
+    .search-container {
+    width: 80%;
+    height: auto;
+    border-radius: 0;
+    }
+
+    .location-input, .cuisine-input {
+        width: 100%;
+    }
+    
+
+    
+    .submit-button {
+        margin-bottom: 20px;
+    }
+ 
+  
+    .Body_container{
+        height: 600px;
+
+    }
+
+}

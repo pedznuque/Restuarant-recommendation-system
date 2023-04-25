@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/index.css">
+    <title>TOAMATO</title>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="https://www.linkpicture.com/q/linkedin_banner_image_1.png" alt="Logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#Section3">ABOUT US</a></li>
+            <li><a href="#Section2">FEATURES</a></li>
+            <li><a href="/home.html">GET STARTED</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      
+      <div class="Body_container">
+
+            <div class="Section_1" id="">
+
+                <div class="Welcome">Welcome to ToAMAto!
+                  <br>
+                  <br>
+                  <span>"Discover your new favorite dining spot with our restaurant recommendation system <br> where delicious meals and great memories await".</span>
+
+                </div>
+
+            </div>
+
+            <div class="Section_2" id="Section2">
+                
+              <div class="slider">
+                <div class="slide active">
+                  <img src="https://img3.parisbouge.com/C0wcrlSdTaDn2H5ISFT68mhyj0s9CXjQbgQnaapNWLg/rs:fill:1500:1000:1/g:ce/M2Q2MTI1OWMtOGNmZS00MzQ3LTlmNDEtM2NmZWNlNWUyYzdmLmpwZw.webp" alt="Image 1" />
+                  <div class="slide-content">
+                    <h2>Personalized recommendations</h2>
+                    <p>The system provides recommendations that are tailored to the user location, cuisine and price range preferences, ensuring that the recommendations are relevant and useful for the user..</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Restaurant_N%C3%A4sinneula.jpg/1200px-Restaurant_N%C3%A4sinneula.jpg" alt="Image 2" />
+                  <div class="slide-content">
+                    <h2>Improved search efficiency</h2>
+                    <p>By filtering recommendations based on the user preferences, the system eliminates the need for users to manually search through a large number of restaurants to find the ones that meet their criteria. This saves time and makes the search process more efficient.</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="https://lirp.cdn-website.com/a51608eb/dms3rep/multi/opt/20210129-AM-MRC+Seating+Arrangement+25-1920w.jpg" alt="Image 3" />
+                  <div class="slide-content">
+                    <h2>Increased customer satisfaction</h2>
+                    <p>By considering multiple criteria, the system provides a more diverse set of recommendations, helping users discover new and interesting restaurants they may not have otherwise considered..</p>
+                  </div>
+                </div>
+              </div>
+              
+                                                   
+              
+
+            </div>
+
+            <div class="about-us-container" id="Section3">
+              <div class="layer layer1"></div>
+              <div class="layer layer2"></div>
+              <div class="layer layer3"></div>
+              <div class="content">
+                <h2>-About Us-</h2>
+                <p>As students pursuing careers in the field of computer science and technology, we understand the importance of developing efficient and effective systems that can improve various aspects of our daily lives. <br> One area that has been consistently growing and evolving is the restaurant recommendation system.
+                  The restaurant recommendation system that we have developed is a unique and innovative solution that combines the latest technologies in machine learning and data analysis to provide users with the most relevant recommendations. With this system, users are able to enter their desired location and cuisine preferences, as well as their preferred price range. This system then utilizes a TF-IDF vectorization method and cosine similarity calculations to provide the user with a list of the most relevant restaurants that match their specifications.
+                </p> 
+              </div>
+            </div>
+            
+                
+            </div>
+
+      </div>
+      
+      
+      
+      
+    
+
+
+<script>
+
+
+const slides = document.querySelectorAll(".slide");
+const intervalTime = 5000;
+let slideInterval;
+
+const nextSlide = () => {
+  const currentSlide = document.querySelector(".active");
+  currentSlide.classList.remove("active");
+  if (currentSlide.nextElementSibling) {
+    currentSlide.nextElementSibling.classList.add("active");
+  } else {
+    slides[0].classList.add("active");
+  }
+};
+
+slideInterval = setInterval(nextSlide, intervalTime);
+
+
+
+
+// Get the links to the sections
+const aboutUsLink = document.querySelector('a[href="#Section3"]');
+const featuresLink = document.querySelector('a[href="#Section2"]');
+
+// Add event listeners to the links
+aboutUsLink.addEventListener('click', scrollToAboutUs);
+featuresLink.addEventListener('click', scrollToFeatures);
+
+// Define the functions to scroll to the sections with a transition effect
+function scrollToAboutUs(event) {
+  event.preventDefault(); // prevent the default link behavior
+  const aboutUsSection = document.getElementById('Section3');
+  aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToFeatures(event) {
+  event.preventDefault(); // prevent the default link behavior
+  const featuresSection = document.getElementById('Section2');
+  featuresSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+</script>
+
+</body>
+</html>
