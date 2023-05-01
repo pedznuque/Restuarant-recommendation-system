@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/bookmarks.css">
+
+  
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://www.linkpicture.com/q/linkedin_banner_image_1.png" alt="">
+    </div>
+    <nav>
+      <ul>
+        {% if 'username' in session %}
+          <li><a href="{{ url_for('index') }}">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown()">{{ session['username'] }}!</a>
+            <div class="dropdown-menu">
+              <a href="/profile">Profile settings</a>
+              <a href="/bookmarks">Bookmarks</a>
+              {% if session['is_admin'] %}
+                <a href="{{ url_for('user_list') }}">Admin</a>
+              {% endif %}
+            </div>
+          </li>
+          <li><a href="/logout">LOG OUT</a></li>
+        {% else %}
+        <li><a href="{{ url_for('index') }}">HOME</a></li>
+        <li><a href="/login">LOG-IN</a></li>
+        <li><a href="/register">SIGN-IN</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
+
+  <h1>My Bookmarks</h1>
+  {% if bookmarks %}
+  <div class="table-container">
+    <table class="bookmark-table">
+      <thead>
+        <tr>
+          <th>Restaurant Name</th>
+          <th>Image</th>
+          <th>Location</th>
+          <th>Cuisine Type</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bookmark in bookmarks %}
+        
+          <tr id="bookmark-{{ bookmark[0] }}">
+            <td class="bookmark-name"> <a href="{{ url_for('details', name=bookmark[0]) }}">{{ bookmark[1] }}</a></td>
+            <td><a href="{{ url_for('details', name=bookmark[0]) }}"><img src="{{ bookmark[4] }}" alt=""></a></td>
+            <td>{{ bookmark[2] }}</td>
+            <td>{{ bookmark[3] }}</td>
+            <td><div><a href="#" class="delete-bookmark" data-bookmark-id="{{ bookmark[0] }}">Delete</a></div></td>
+          </tr>
+        
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p>No bookmarks yet.</p>
+  {% endif %}
+
+
+</body>
+
+<script>
+// Add a confirmation message and AJAX request to delete bookmarks
+const deleteButtons = document.querySelectorAll('.delete-bookmark');
+deleteButtons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const bookmarkId = event.target.dataset.bookmarkId;
+    const confirmDelete = confirm('Are you sure you want to delete this bookmark?');
+    if (confirmDelete) {
+      fetch(`/bookmarks/delete/${bookmarkId}`, {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+      })
+
+      .then(response => {
+        if (response.ok) {
+          // Remove the bookmark from the table
+          const bookmarkRow = document.getElementById(`bookmark-${bookmarkId}`);
+          bookmarkRow.parentNode.removeChild(bookmarkRow);
+        } else {
+          console.error(`Error deleting bookmark: ${response.status} - ${response.statusText}`);
+        }
+      })
+      .catch(error => console.error(error));
+    }
+  });
+});
+
+function toggleDropdown() {
+    var dropdown = document.querySelector('.dropdown-menu');
+    dropdown.classList.toggle('show');
+    dropdown.style.transition = "transform 0.2s ease-in-out, opacity 0.2s ease-in-out";
+  }
+
+</script>
+</html>

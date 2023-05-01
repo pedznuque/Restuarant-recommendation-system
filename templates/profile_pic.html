@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+
+        display: grid;
+        justify-items: center;
+
+    }
+
+    img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-top: 200px;
+      
+    }
+    label {
+        font-size: 16px;
+        margin-right: 8px;
+    }
+    input[type="file"] {
+        margin-right: 8px;
+    }
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 8px;
+    }
+    .btn-danger {
+        background-color: #dc3545;
+    }
+    
+</style>
+<img id="preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeHguRXHmFaEvA-ZrnyZPu2x0Wh8oqy-_VHHzIfXQsnYoMMLfFy69D1PIPlxJssEIVNBY&usqp=CAU" alt="Profile Picture">
+    <form method="POST" enctype="multipart/form-data">
+        <label for="profile_pic">Profile Picture:</label>
+        <input type="file" name="profile_pic" accept="image/jpeg" onchange="previewFile()">
+        <input type="submit" class="btn" value="Update">   
+    </form>
+    
+    
+    
+    <script>
+          function previewFile() {
+            const preview = document.getElementById('preview');
+            const file = document.querySelector('input[type=file]').files[0];
+            const reader = new FileReader();
+    
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+            }, false);
+    
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+

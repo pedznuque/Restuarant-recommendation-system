@@ -1,0 +1,258 @@
+*{
+
+padding: 0;
+margin: 0;
+
+}
+
+
+
+header {
+    background-color: #000;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: center bottom;
+    transition: width 0.2s ease-out;
+  }
+  
+  nav a:hover {
+    color: #98ece8;
+  }
+  
+  nav a:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 578px) {
+    .logo {
+      display: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    nav li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    nav a {
+      margin-left: 18px;
+      font-size: 13px;
+      text-align: center;
+      display: block;
+      padding: 10px 16px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .logo img {
+      height: 70px;
+    }
+    nav a {
+      font-size: 19px;
+      padding: 10px 20px;
+    }
+  }
+  
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    z-index: 1;
+    width: 200px;
+    border: 1px solid #ccc;
+  
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    margin-top: 20px;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #eee;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  body{
+
+
+    background-image: url(https://cdn.wallpapersafari.com/92/77/F7XPnJ.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+  }
+
+
+
+
+
+
+
+
+  
+
+  .user-profile {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1312128e;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: normal;
+    color: white;
+  }
+
+  h1{
+
+    margin-bottom: 10px;
+
+  }
+
+  .user-details {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .email {
+    margin-top: 10px;
+    color: white;
+  }
+
+  .reviews {
+    margin-top: 20px;
+    color: white;
+  }
+
+  .reviews ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reviews li {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .review-header a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .review-header span {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+  }
+
+  .delete-form {
+    display: inline-block;
+  }
+
+  .delete-button {
+    background-color: #ff5e3a;
+    color: rgb(7, 7, 7);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+
+  .review-content {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .review-author {
+    color: rgb(252, 250, 250);
+    font-size: 14px;
+  }

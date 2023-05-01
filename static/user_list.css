@@ -1,0 +1,256 @@
+*{
+
+    padding: 0;
+    margin: 0;
+
+}
+
+header {
+  background-color: #000;
+  height: 98px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-right: 20px;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+nav a:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: center bottom;
+  transition: width 0.2s ease-out;
+}
+
+nav a:hover {
+  color: #98ece8;
+}
+
+nav a:hover:before {
+  width: 100%;
+}
+
+@media screen and (max-width: 578px) {
+  .logo {
+    display: none;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  nav li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  nav a {
+    margin-left: 18px;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo img {
+    height: 70px;
+  }
+  nav a {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+}
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  z-index: 1;
+  width: 200px;
+  border: 1px solid #ccc;
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  margin-top: 20px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-menu a:hover {
+  background-color: #eee;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+/***********NAVIGATION BAR*******************************/
+  
+body{
+
+  background-image: url(https://cdn.wallpapersafari.com/92/77/F7XPnJ.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+/* Main heading style */
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 30px 0;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px #333333;
+}
+
+/* Table container style */
+.table-container {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* User table style */
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header row style */
+table th {
+  background-color: #333333;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+}
+
+/* Table body row style */
+table td {
+  border: none;
+  font-size: 14px;
+  padding: 20px;
+  vertical-align: middle;
+  color: #ffffff;
+  background-color: #46454562;
+}
+
+/* User photo style */
+table img {
+  height: 100px;
+  width: 103px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 65px;
+}
+
+table img:hover {
+  transform: scale(1.1);
+}
+
+/* Delete user button style */
+form button[type="submit"] {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #ff5e3a;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  margin-left: 18px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #ff3b20;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* No users message style */
+p {
+  font-size: 20px;
+  margin: 40px 0;
+  text-align: center;
+  color: #333333;
+}
+
+/* View profile link style */
+.view-profile {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #333333;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.view-profile:hover {
+  background-color: #555555;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

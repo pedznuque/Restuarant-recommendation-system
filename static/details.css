@@ -1,0 +1,863 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+
+}
+
+header {
+  background-color: #000;
+  height: 98px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-right: 20px;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+nav a:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: center bottom;
+  transition: width 0.2s ease-out;
+}
+
+nav a:hover {
+  color: #98ece8;
+}
+
+nav a:hover:before {
+  width: 100%;
+}
+
+@media screen and (max-width: 578px) {
+  .logo {
+    display: none;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  nav li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  nav a {
+    margin-left: 18px;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo img {
+    height: 70px;
+  }
+  nav a {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+}
+
+  
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    z-index: 1;
+    width: 200px;
+    border: 1px solid #ccc;
+  
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    margin-top: 20px;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #eee;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+
+
+
+
+/*******************Main_Container***********************/
+.container {
+    width: 100%;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 110px 400px;
+  }
+
+@media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 300px 300px 90px 90px 300px 300px;
+    }
+  }
+  
+
+
+
+.Grid_6{
+
+
+
+}
+
+
+/*******************Main_Container***********************/
+
+
+
+/****************Large image******************************/
+
+.Grid_1{
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    }
+    img {
+      max-width: 608px;
+      max-height: 360px;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      img {
+        max-width: 90vw;
+        max-height: 50vh;
+       
+      }
+    }
+    
+    @media (max-width: 480px) {
+      img {
+        max-width: 80vw;
+        max-height: 40vh;
+      }
+    }
+    
+
+
+    /* Media queries for responsive design */
+ 
+ 
+/****************Large image******************************/
+
+
+
+/***************Map layer*********************************/
+
+.Grid_2{
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+
+}
+
+.Map{
+
+    width: 95%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #ccc;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+
+/***************Map layer*********************************/
+
+
+
+
+/***************Title and locations***************************/
+  
+
+.Grid_3{
+
+   
+    display: flex;
+        flex-direction: column;
+        height: 70px;
+        max-width: 623px;
+        overflow: hidden;
+ 
+        padding: 20px;
+        color: #000000;
+    
+    }
+  .main-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .mini-titles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .mini-title {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    width: 45%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .subtitle-text {
+    margin: 0;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .title {
+      max-width: 100%;
+    }
+    
+    .main-title {
+      font-size: 24px;
+    }
+    
+    .mini-title {
+      font-size: 12px;
+      width: 40%;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .main-title {
+      font-size: 18px;
+    }
+    
+    .mini-title {
+      font-size: 10px;
+      width: 35%;
+    }
+  }
+  
+  
+/***************Title and locations***************************/
+
+
+
+/***************Buttons share save and direction******************/
+.Grid_4 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+}
+.button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #e6e6e6;
+  color: #333;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.save, .direction, .share {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+}
+
+.icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+  .icon {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .button {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  .icon {
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+
+/***************Buttons share save and direction******************/
+
+
+/********************tabs**********************/
+.Grid_5 {
+    width: 99.5%;
+    max-width: 626px;
+    height: 420px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+    overflow: hidden;
+    font-family: 'Times New Roman';
+  }
+  
+  .tabs {
+    background-color: #f5f5f5;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .tablinks {
+    background-color: #f5f5f5;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #666;
+    transition: 0.1s;
+  }
+  
+  .tablinks:hover {
+    background-color: #eee;
+  }
+  
+  .tablinks.active {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 3px solid #000000;
+  }
+  
+  .tabcontent {
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+  }
+  
+  .tabcontent h3 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman';
+  }
+  
+  .tabcontent p {
+    margin-bottom: 20px;
+  }
+  
+  .tabcontent ul {
+    margin-bottom: 20px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  /* Responsive CSS */
+  @media only screen and (max-width: 640px) {
+    .container {
+      height: auto;
+    }
+    
+    .tablinks {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+    
+    .tabcontent h3 {
+      font-size: 20px;
+    }
+  }
+  /********************tabs**********************/
+
+
+  /***************comments and review************/
+  .insert_comment_section_BOX{
+
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    
+    
+      
+    
+}
+
+.insert_comment_section_BOX_no_user{
+
+  background-color: aliceblue;
+  display: grid;
+  justify-items: center;
+
+}
+
+.admins_review {
+
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.admins_review img{
+
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 10px;
+  right: 10px;
+
+}
+
+.non_user_review{
+
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.non_user_review a{
+
+text-decoration: none;
+
+}
+
+.non_user_review img{
+
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 10px;
+  right: 10px;
+
+
+
+}
+
+    .username_icon_BOX{
+        margin-top: 10px;
+      
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+            .username_icon img{
+
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+
+            }
+
+    .write_a_comment{
+        margin-top: 10px;
+        display: grid;
+        
+        
+    }
+
+
+    
+   
+        .input_box textarea{
+            resize: none;
+            width: 485px;
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            background-color: transparent;
+            margin-top: 20px;
+            height: 15px;
+        
+        }
+        .submit_box{
+
+            display: grid;
+            grid-template-columns: 1.5fr 0.5fr;
+        }
+                .submit{
+
+                 
+
+                }
+                .submit input{
+
+                    background-color: black;
+                    width: 80px;
+                    height: 30px;
+                    color: white;
+                    border-radius: 20px;
+                    
+
+                }
+
+
+                .review_section_BOX{
+
+                    background-color: rgb(255, 255, 255);
+
+                }
+
+                 .review{
+
+                    
+            
+                    height: 12vh;
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    margin-bottom: 60px;
+                    margin-top: 20px;
+                 }
+
+                        .profile{
+
+                            display: grid;
+                            grid-template-columns: 58px 320px 1fr 1fr;
+                            
+                        }
+                            .user_icon_for_review_BOX{
+
+                           
+
+                            }
+
+                            
+                        .user_icon_for_review img{
+
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50px;
+
+                        }
+                            .username{
+
+                             
+                                
+                            }
+
+                            .username p{
+
+                                position: relative;
+                                top: 7px;
+                                font-weight: bold;
+                                font-size: 20px;
+
+                            }
+
+                            .null1{
+
+                
+
+                            }
+                               
+                            .date{
+
+                                font-size: 12px;
+                                margin-top: 8px;
+                                margin-left: 2px;
+
+                            }                                                                                       
+
+                        .comment_box{
+
+                            background-color: rgb(223, 223, 223);
+                            border-bottom: solid black 1px;
+
+                        }
+
+                        .comment{
+
+                            margin-left: 60px;
+                            margin-top: 20px;
+                            word-wrap: break-word; /* Wrap words that exceed the width of the element */
+                            max-width: 500px; 
+                        }
+                            
+                            .dropdown {
+                                position: relative;
+                                display: inline-block;
+                                left: 15px;
+                            }
+                            
+                          .dropbtn {
+                            background-color: transparent;
+                            color: #333;
+                            font-size: 25px;
+                            border: none;
+                            cursor: pointer;
+                          }
+                          
+                          .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            z-index: 1;
+                          }
+                          
+                          .dropdown-content .delete-btn {
+                            color: rgb(0, 0, 0);
+                          }
+                          
+                          .dropdown.open .dropdown-content {
+                            display: block;
+                          }
+
+                          .no_reviews_yet{
+
+                            font-size: 25px;
+                            align-self: center;
+                            text-align: center;
+                            position: relative;
+                            top: 30px;
+                          }
+
+                          .no_review_image img{
+
+                            width: 30%;
+                            height: 30%;
+                            position: relative;
+                            left: 220px;
+                            top: 30px;
+                          }
+
+                          
+
+@media screen and (max-width: 390px){
+
+    .username_icon_BOX{
+        margin-top: 10px;
+      
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+            .username_icon img{
+
+                width: 50px;
+                height: 50px;
+
+            }
+
+    .write_a_comment{
+        margin-top: 5px;
+      
+        display: grid;
+        
+        
+    }
+        .input_box textarea{
+            resize: none;
+            width: 240px;
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            background-color: transparent;
+            margin-top: 20px;
+            height: 15px;
+        
+        }
+        .submit_box{
+
+            display: grid;
+            grid-template-columns: 180px 1fr;
+        }
+                .submit{
+
+                 
+
+                }
+                .submit input{
+
+                    background-color: black;
+                    width: 60px;
+                    height: 23px;
+                    color: white;
+                    border-radius: 20px;
+                    font-size: 10px;
+
+                }
+                
+                .review_section_BOX{
+
+                    background-color: aliceblue;
+                   
+                }
+                 .review{
+
+                   
+                    height: 12vh;
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    margin-bottom: 60px;
+                    
+                    
+                 }
+
+                        .profile{
+
+                            display: grid;
+                            grid-template-columns: 58px 200px 1fr 1fr;
+                            
+                        }
+                            .user_icon_for_review_BOX{
+
+                           
+
+                            }
+
+
+                            .username{
+
+                             
+                                
+                            }
+
+                            .username p{
+
+                                position: relative;
+                                top: 7px;
+                                font-weight: bold;
+                                font-size: 15px;
+
+                            }
+
+                            .null1{
+
+                
+
+                            }
+                               
+                            .date{
+
+                                font-size: 9px;
+                                margin-top: 8px;
+                                margin-left: 2px;
+                            
+                            }
+
+                            .no_reviews_yet{
+
+                              top: 0px;
+
+                            }
+                            .no_review_image img{
+
+                              width: 30%;
+                              height: 30%;
+                              position: relative;
+                              left: 125px;
+                              top: 0px;
+                            }
+}

@@ -1,0 +1,389 @@
+*{
+
+    padding: 0;
+    margin: 0;
+}
+
+
+/***********NAVIGATION BAR*******************************/
+
+header {
+    background-color: #000;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: center bottom;
+    transition: width 0.2s ease-out;
+  }
+  
+  nav a:hover {
+    color: #98ece8;
+  }
+  
+  nav a:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 578px) {
+    .logo {
+      display: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    nav li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    nav a {
+      font-size: 12px;
+      text-align: center;
+      display: block;
+      padding: 10px 16px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .logo img {
+      height: 70px;
+    }
+    nav a {
+      font-size: 19px;
+      padding: 10px 20px;
+    }
+  }
+/***********NAVIGATION BAR*******************************/
+  
+
+
+
+
+/***********BODY CONTAINER*******************************/
+  
+.Body_container{
+
+width: 100%;
+
+display: grid;
+grid-template-rows: 800px 600px 500px;
+
+}
+
+      /**********SECTION 1**********************/
+        .Section_1{
+
+     
+            background-image: url(https://cdn.wallpapersafari.com/92/77/F7XPnJ.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: grid;
+            align-items: center;
+         
+        }
+
+        .Welcome{
+
+            color: aliceblue;
+            font-size: 35px;
+          text-align: center;
+          letter-spacing: 1px;
+        }
+
+        .Welcome span{
+
+          font-size: 20px;
+          letter-spacing: 1px;
+          
+
+        }
+
+
+        /**********SECTION 2**********************/
+
+        .Section_2{
+            background-color: rgb(255, 255, 255);
+            display: grid;
+            justify-items: center;
+            
+        }
+        
+
+        .slider {
+          position: relative;
+          width: 98%;
+          height: 600px;
+          overflow: hidden;
+          
+        
+          
+          
+        }
+        
+        .slide {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+          opacity: 1;
+        }
+        
+        .slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        .slide-content {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 50%;
+          padding: 50px;
+          transform: translateY(-50%) skew(-20deg);
+          transform-origin: right;
+          background-color: rgba(0, 0, 0, 0.589);
+          color: #fff;
+}
+
+        
+        .slide-content h2 {
+          font-size: 25px;
+          margin-bottom: 20px;
+          transform: skew(20deg);
+        }
+        
+        .slide-content p {
+          font-size: 16px;
+          line-height: 1.5;
+          letter-spacing: 1px;
+          transform: skew(20deg);
+        }
+        
+        /**********SECTION 3**********************/
+        .Section_3{
+    
+            background-color: rgb(0, 0, 0);
+
+        }
+
+        .about-us-container {
+          height: 500px;
+          position: relative;
+          overflow: hidden;
+          background: url(https://ca-times.brightspotcdn.com/dims4/default/4f9761e/2147483647/strip/true/crop/3500x1969+0+0/resize/1200x675!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa3%2Fbc%2F967153f7443ab69d6b182b91b1f4%2Ffo-quickbites-07102022-02.jpg) no-repeat center center fixed;
+          background-size: cover;
+          filter: grayscale(30%) brightness(50%);
+        }
+        
+        .layer {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+        }
+        
+        .layer1 {
+          background-color: #ffffff;
+          opacity: 0.8;
+          animation-name: layer1;
+        }
+        
+        .layer2 {
+          background-color: #ffffff;
+          opacity: 0.5;
+          animation-name: layer2;
+        }
+        
+        .layer3 {
+          background-color: #1c1c1c;
+          opacity: 0.7;
+          animation-name: layer3;
+        }
+        
+        .content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          z-index: 1;
+          padding: 0 20px;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        
+        h2 {
+          font-size: 2em;
+          color: #ffffff;
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+        }
+        
+        p {
+          font-size: 1em;
+          color: #ffffff;
+          line-height: 1.6em;
+        }
+        
+        @media (max-width: 768px) {
+          h2 {
+            font-size: 2em;
+          }
+          p {
+            font-size: 1em;
+          }
+        }
+        
+        @keyframes layer1 {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        
+        @keyframes layer2 {
+          0% {
+            transform: rotate(360deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+        
+        @keyframes layer3 {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+    
+@media screen and (max-width: 450px){
+
+  .Body_container{
+
+    grid-template-rows: 600px 600px 900px;
+    height: 100%;
+  }
+
+  .Welcome{
+
+    font-size: 22px;
+
+  }
+
+  .Welcome span{
+
+    font-size: 15px;
+
+  }
+
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 60%;
+    
+    padding: 50px;
+    transform: translateY(-50%) skew(-20deg);
+    transform-origin: right;
+    background-color: rgba(0, 0, 0, 0.589);
+    color: #fff;
+}
+
+  .slide-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    transform: skew(20deg);
+  }
+
+  .slide-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    transform: skew(20deg);
+  }
+
+  .about-us-container{
+
+
+    height: 900px;
+  }
+
+    h2 {
+      font-size: 15px;
+     
+    
+      
+      letter-spacing: 5px;
+    }
+
+    p {
+      font-size: 13px;
+      color: #ffffff;
+      line-height: 1.6em;
+    }
+
+
+}
+        
+        

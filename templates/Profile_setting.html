@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+<link rel="stylesheet" href="/static/Profile_setting.css">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://www.linkpicture.com/q/linkedin_banner_image_1.png" alt="">
+    </div>
+    <nav>
+      <ul>
+        {% if 'username' in session %}
+          <li><a href="{{ url_for('index') }}">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown()">{{ session['username'] }}!</a>
+            <div class="dropdown-menu">
+              <a href="/profile">Profile settings</a>
+              <a href="/bookmarks">Bookmarks</a>
+              {% if session['is_admin'] %}
+                <a href="{{ url_for('user_list') }}">Admin</a>
+              {% endif %}
+            </div>
+          </li>
+          <li><a href="/logout">LOG OUT</a></li>
+        {% else %}
+        <li><a href="{{ url_for('index') }}">HOME</a></li>
+        <li><a href="/login">LOG-IN</a></li>
+        <li><a href="/register">SIGN-IN</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+ 
+
+
+<div class="Container">
+
+<div class="Profile_Pic">
+
+
+
+  <div class="title">Profile Setting</div>
+
+  {% if session['username'] %}
+
+  {% if not session['is_admin'] %} 
+    <div class="Circle"><img src="{{ profile_pic_url }}" alt=""></div>
+    <a href="/account" class="button">Upload</a>
+    {% else %}
+    <div class="Circle_admin"><img src="https://png2.cleanpng.com/sh/65efb0b2eb3a118911327960ea9e4b42/L0KzQYq3V8MxN6tvkJH0aYP2gLBuTflkd58yfNd8aXfxPbLrjflvNaRqjOZybnf2Pb7ojPUucZR0hp9vcnXoPbX2lB5td5JpReJ3Zz3kfrW0VfQ1OGQAfdQ5NnK1RYq1Wcc4PmI2S6I6NUa3RIq3UsE6OGM8TJD5bne=/kisspng-icon-design-admin-settings-male-icon-free-download-png-and-5d4039eb06b259.9776113015644902190274.png" alt=""></div>
+    <div class="admin_text">ADMINISTRATOR</div>
+  {% endif %}
+
+
+ 
+  
+  {% endif %}
+  
+
+</div>
+
+
+
+<div class="Username_form">
+
+
+  <div class="form-container">
+    {% if error %}
+    <div class="error-container">{{ error }}</div>
+    {% endif %}
+    
+    <form method="post">
+      <div>
+        <label for="new_username">New Username:</label>
+        <input type="text" id="new_username" name="new_username" value="{{ session['username'] }}">
+      </div>
+      <div>
+        <label for="old_password">Old Password:</label>
+        <input type="password" id="old_password" name="old_password">
+      </div>
+      <div>
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password">
+      </div>
+      <div>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password">
+      </div>
+      <button type="submit">Update Profile</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+  
+  
+
+
+
+
+<script>
+  function previewFile() {
+    const preview = document.getElementById('preview');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+      
+
+
+function toggleDropdown() {
+    var dropdown = document.querySelector('.dropdown-menu');
+    dropdown.classList.toggle('show');
+    dropdown.style.transition = "transform 0.2s ease-in-out, opacity 0.2s ease-in-out";
+  }
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+<style>
+
+    
+
+
+
+
+  
+  

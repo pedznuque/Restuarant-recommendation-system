@@ -1,0 +1,358 @@
+*{
+
+padding: 0;
+margin: 0;
+
+}
+
+
+header {
+    background-color: #000;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: center bottom;
+    transition: width 0.2s ease-out;
+  }
+  
+  nav a:hover {
+    color: #98ece8;
+  }
+  
+  nav a:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 578px) {
+    .logo {
+      display: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    nav li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    nav a {
+      margin-left: 18px;
+      font-size: 12px;
+      text-align: center;
+      display: block;
+      padding: 10px 16px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .logo img {
+      height: 70px;
+    }
+    nav a {
+      font-size: 19px;
+      padding: 10px 20px;
+    }
+  }
+  
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    z-index: 1;
+    width: 200px;
+    border: 1px solid #ccc;
+  
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    margin-top: 20px;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #eee;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+
+    background-image: url(https://cdn.wallpapersafari.com/92/77/F7XPnJ.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  /* Main heading style */
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px #333333;
+  }
+  
+  /* Table container style */
+  .table-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Bookmark table style */
+  .bookmark-table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table header row style */
+  .bookmark-table th {
+    background-color: #333333;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: left;
+    color: #fff;
+  }
+  
+  /* Table body row style */
+  .bookmark-table td {
+    border: none;
+    font-size: 14px;
+    padding: 20px;
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #24242465;
+  }
+  
+  /* Main heading style */
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px #333333;
+  }
+  
+  /* Table container style */
+  .table-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Bookmark table style */
+  .bookmark-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table header row style */
+  .bookmark-table th {
+    background-color: #333333;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: left;
+    color: #fff;
+  }
+  
+  /* Table body row style */
+  .bookmark-table td {
+    border: none;
+    font-size: 14px;
+    padding: 20px;
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #46454562;
+  }
+  
+  /* Bookmark name style */
+  .bookmark-name a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .bookmark-name a:hover {
+    color: #ff5e3a;
+  }
+  
+  /* Bookmark image style */
+  .bookmark-table img {
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .bookmark-table img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Delete bookmark link style */
+  .delete-bookmark {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #ff5e3a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .delete-bookmark:hover {
+    background-color: #ff3b20;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* No bookmarks message style */
+  p {
+    font-size: 20px;
+    margin: 40px 0;
+    text-align: center;
+    color: #333333;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Table container style */
+    .table-container {
+      margin: 20px 0;
+      display: block;
+    }
+  
+    /* Bookmark table style */
+    .bookmark-table {
+      border-radius: 0;
+    }
+  
+    /* Table header row style */
+    .bookmark-table th {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    /* Table body row style */
+    .bookmark-table td {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    /* Bookmark name style */
+    .bookmark-name a {
+      font-size: 16px;
+    }
+  
+    /* Bookmark image style */
+    .bookmark-table img {
+      height: 75px;
+      width: 100px;
+    }
+  
+    /* Delete bookmark link style */
+    .delete-bookmark {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+  
+    /* No bookmarks message style */
+    p {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+  }
