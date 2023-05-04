@@ -22,6 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  min-width: 363px;
 }
 
 .logo img {
@@ -154,7 +155,7 @@ nav a:hover:before {
     grid-template-columns: 1.3fr 0.7fr 1fr;
     border: solid rgb(39, 185, 76) 1px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
- 
+    min-width: 400px;
 }
 
 .Main_container{
@@ -162,7 +163,7 @@ nav a:hover:before {
 width: 100%;
 height: 100%;
 background-color: aliceblue;
-
+min-width: 400px;
 
 }
 .margin_top{

@@ -13,6 +13,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  min-width: 380px;
 }
 
 .logo img {
@@ -147,6 +148,9 @@ nav a:hover:before {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 110px 400px;
+    max-width: 1263px;
+    margin: 0 auto;
+    min-width: 414px;
   }
 
 @media (max-width: 768px) {
@@ -155,7 +159,14 @@ nav a:hover:before {
       grid-template-rows: 300px 300px 90px 90px 300px 300px;
     }
   }
-  
+
+  @media (max-width: 480px) {
+    .container {
+   
+      grid-template-rows: 200px 200px 90px 90px 300px 300px;
+    }
+  }
+
 
 
 
@@ -197,8 +208,8 @@ nav a:hover:before {
     
     @media (max-width: 480px) {
       img {
-        max-width: 80vw;
-        max-height: 40vh;
+        max-width: 70vw;
+        max-height: 20vh;
       }
     }
     
@@ -232,6 +243,22 @@ nav a:hover:before {
     justify-items: center;
     align-items: center;
 
+}
+
+
+@media (max-width: 768px) {
+  .Map {
+    max-width: 90vw;
+    max-height: 50vh;
+   
+  }
+}
+
+@media (max-width: 480px) {
+  .Map {
+    max-width: 70vw;
+    max-height: 20vh;
+  }
 }
 
 /***************Map layer*********************************/
@@ -733,7 +760,7 @@ text-decoration: none;
 
                           
 
-@media screen and (max-width: 390px){
+@media screen and (max-width: 414px){
 
     .username_icon_BOX{
         margin-top: 10px;

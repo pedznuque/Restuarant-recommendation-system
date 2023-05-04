@@ -37,14 +37,21 @@
     </nav>
   </header>
 
+<div class="wrapper">
+
 
 <div class="container">
 
   <div class="Grid_1">
 
     
-
-     <img src="{{ restaurant.large_image_url }}">
+    {% if large_image_url %}
+       
+    <img src="{{ restaurant.large_image_url }}">
+    {% else %}
+    <img src="https://i.ibb.co/hBdfbyF/zoamato-1.jpg">
+    
+    {% endif %}
 
 
 
@@ -235,7 +242,7 @@
 
 </div>
 
-
+</div>
 
 <!---For tabs container-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
