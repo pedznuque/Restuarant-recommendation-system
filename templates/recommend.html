@@ -53,7 +53,7 @@
               <div class="price_container">
               <button id="price-sort-button" onclick="sortRestaurantsByPrice()">SORT BY PRICE &#8593&#8595</button>
               </div>
-          </div>
+        </div>
 
      
 
@@ -79,33 +79,25 @@
 
 <div class="Main_container">
   <div class="margin_top"></div>
-  <div class="container">
+ 
 
-
-   
-      
-      
-      <div class="restaurant-container">
-        {% for restaurant in restaurants %}
-        <div class="restaurant">
-          <a href="{{ url_for('details', name=restaurant.Resto_id) }}"> 
-            <div class="thumbnail"><img src="{{ restaurant.image_url }}" alt=""></div>
-            <div class="resto_details">
-              <div class="resto_name">{{ restaurant.Resto_name | truncate(25) }}</div>
-              <div class="resto-info">
-                <div class="rating">{{ restaurant.rating }} &#9733</div>
-                <div class="location">{{ restaurant.location }}</div>
-                <div class="cuisine">{{ restaurant.cuisine_type | truncate(29) }}</div>
-                <div class="cost">Average cost for two: &#8369; {{ restaurant.cost_for_two }}</div>
-              </div>
-            </div>
-          </a>
+  <div class="restaurant-container">
+    {% for restaurant in restaurants %}
+    <div class="restaurant">
+      <a href="{{ url_for('details', name=restaurant.Resto_id) }}"> 
+        <div class="thumbnail"><img src="{{ restaurant.image_url }}" alt=""></div>
+        <div class="resto_details">
+          <div class="resto_name">{{ restaurant.Resto_name | truncate(25) }}</div>
+          <div class="resto-info">
+            <div class="rating">{{ restaurant.rating }} &#9733;</div>
+            <div class="location">{{ restaurant.location }}</div>
+            <div class="cuisine">{{ restaurant.cuisine_type | truncate(29) }}</div>
+            <div class="cost">Average cost for two: &#8369; {{ restaurant.cost_for_two }}</div>
+          </div>
         </div>
-        
-        
-        {% endfor %}
-      </div>
+      </a>
     </div>
+    {% endfor %}
   </div>
 </body>
 

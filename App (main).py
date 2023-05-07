@@ -1,8 +1,10 @@
 import sqlite3
 from Database import tables
 from Profile_setting import profile, profile_pic
-from Admin import user_list, user_profile, delete_user, delete_review_admin
+from Admin import user_list, user_profile, delete_user
 from Forms import login, logout, register
+
+
 from datetime import datetime
 from difflib import get_close_matches
 from typing import Any
@@ -10,6 +12,11 @@ import pandas as pd
 from flask import Flask, flash, jsonify, redirect, render_template, request, session, url_for
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import random
+from datetime import datetime
+
+
+
 
 
 
@@ -22,6 +29,8 @@ app.secret_key = 'your_secret_key'
 
 
 
+
+
 # THIS IS THE STARTER PAGE OF THE SYSTEM
 @app.route('/')
 def index():
@@ -29,7 +38,7 @@ def index():
 
 
 
-
+tables()
 
 
 # THESE ARE THE ROUTES FOR PROFILE_SETTING"S FUNCTIONS
@@ -42,7 +51,6 @@ app.route('/account', methods=['GET', 'POST'])(profile_pic)
 app.route('/users')(user_list)
 app.route('/users/<int:user_id>')(user_profile)
 app.route('/delete_user', methods=['POST'])(delete_user)
-app.route('/delete_review_admin/<review_id>', methods=['POST'])(delete_review_admin)
 
 
 
@@ -50,6 +58,9 @@ app.route('/delete_review_admin/<review_id>', methods=['POST'])(delete_review_ad
 app.route('/register', methods=['GET', 'POST'])(register)
 app.route('/login', methods=['GET', 'POST'])(login)
 app.route('/logout')(logout)
+
+
+
 
 
 
@@ -72,17 +83,62 @@ tfidf = vectorizer.fit_transform(restaurants_df['combined'].astype(str))
 
 
 
+# Function to randomly select n unique restaurants from a DataFrame for a given cuisine
+def get_random_restaurants(df, cuisine, n=5):
+    cuisine_restaurants = df[df['cuisines'] == cuisine]
+    unique_restaurants = cuisine_restaurants['Resto_name'].unique()
+    if len(unique_restaurants) < n:
+        # Adjust the sample size if the number of unique restaurants is less than n
+        n = len(unique_restaurants)
+    cuisine_restaurants = cuisine_restaurants.drop_duplicates(subset='Resto_name').sample(n=n, replace=False)
+    return cuisine_restaurants
 
-# this is the page of the base
-@app.route('/home.html')
-def home(): 
-    # sugesstion function to display them in the search input
-    location_suggestions = restaurants_df['location'].unique().tolist()
-    cuisines_suggestions = restaurants_df['cuisines'].unique().tolist()
-    search_suggestions = restaurants_df['Resto_name'].unique().tolist()
+@app.route('/feed', methods=['GET'])
+def feed():
+    # Filter out cuisines with 1 or 2 restaurants
+    filtered_cuisines = []
+    for cuisine in restaurants_df['cuisines'].unique():
+        cuisine_restaurants = restaurants_df[restaurants_df['cuisines'] == cuisine]
+        unique_restaurants = cuisine_restaurants['Resto_name'].nunique()
+        if unique_restaurants > 2:
+            filtered_cuisines.append(cuisine)
 
     
-    return render_template('home.html', location_suggestions=location_suggestions, cuisines_suggestions=cuisines_suggestions, search_suggestions=search_suggestions )
+    # Randomly select three cuisines from the updated filtered list
+    cuisines = random.sample(filtered_cuisines, 20)
+    feed_data = {}
+
+    for cuisine in cuisines:
+        # Get randomly selected restaurants for the cuisine
+        cuisine_restaurants = get_random_restaurants(restaurants_df, cuisine, n=10)
+
+        # Create a list of restaurant details for the cuisine
+        restaurant_details = []
+        for _, row in cuisine_restaurants.iterrows():
+            restaurant_detail = {
+                'name': row['Resto_name'],
+                'location': row['location'],
+                'address': row['address'],
+                'rating': row['rating'],
+                'large_image_url': row['large_image_url'],
+                'image_url': row['image_url'],
+                'cuisine_type': row['cuisines'],
+                'resto_id': row['resto_id'],
+                'latitude': row['latitude'],
+                'longitude': row['longitude']
+            }
+            restaurant_details.append(restaurant_detail)
+
+        # Store the cuisine's restaurants in the feed_data dictionary
+        feed_data[cuisine] = restaurant_details
+
+    # Extract unique values from the "cuisine" column
+    cuisine_select = restaurants_df['cuisines'].unique()
+
+
+    # Pass the feed data and updated cuisines list to the template
+    return render_template('feed.html', feed_data=feed_data, cuisine_select=cuisine_select)
+
 
 
 
@@ -150,6 +206,8 @@ def recommend():
 
 
 
+
+
 # allow the user to search for specific restaurants and process them
 @app.route('/search')
 def search():
@@ -209,8 +267,6 @@ def search():
 
 
 
-
-#------this is the last page were user clicked their desire restaurant from the results-----------------
 
 
 # this is function that show more details and allow the user to comment and bookmark
@@ -299,8 +355,17 @@ def details():
     if profile_pic_url is None:
         profile_pic_url = 'https://cdn-icons-png.flaticon.com/512/1144/1144709.png'
 
+
+
+    
+    
+
+
     # Pass the restaurant details and reviews to the template
     return render_template('details.html', restaurant=restaurant_details, reviews=reviews, is_bookmarked=is_bookmarked, profile_pic_url=profile_pic_url) 
+
+
+
 
 
 
@@ -327,6 +392,19 @@ def delete_review(name):
 
     
 
+@app.route('/delete_review_admin/<review_id>', methods=['POST'])
+def delete_review_admin(review_id):
+    if not session['is_admin']:
+        return jsonify({'success': False, 'message': 'Unauthorized access'}), 401
+    
+    # Delete the review from the database
+    with sqlite3.connect('users.db') as conn:
+        c = conn.cursor()
+        c.execute('DELETE FROM reviews WHERE id = ?', (review_id,))
+        conn.commit()
+
+    # Return a JSON response indicating success
+    return jsonify({'success': True})
 
 
 

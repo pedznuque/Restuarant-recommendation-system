@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 
 
-@app.route('/register', methods=['GET', 'POST'])
+
 def register():
     if request.method == 'POST':
         username = request.form.get('username')
@@ -54,7 +54,7 @@ def register():
 
 
 
-@app.route('/login', methods=['GET', 'POST'])
+
 def login():
     error = None
     if request.method == 'POST':
@@ -78,11 +78,11 @@ def login():
         if admin:
             session['username'] = admin[1]
             session['is_admin'] = True
-            return render_template('home.html')
+            return render_template('index.html')
         elif user:
             session['username'] = user[1]
             session['is_admin'] = False
-            return render_template('home.html')
+            return render_template('index.html')
         else:
             error = 'Invalid Username or Password'
             
@@ -91,7 +91,7 @@ def login():
 
 
 
-@app.route('/logout')
+
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))

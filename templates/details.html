@@ -44,14 +44,11 @@
 
   <div class="Grid_1">
 
-    
-    {% if large_image_url %}
+
        
     <img src="{{ restaurant.large_image_url }}">
-    {% else %}
-    <img src="https://i.ibb.co/hBdfbyF/zoamato-1.jpg">
-    
-    {% endif %}
+  
+ 
 
 
 
@@ -129,6 +126,7 @@
       <h3>Description</h3>
       <div class=""><strong>Address: </strong>{{ restaurant.address }}</div> <br>
       <div class=""><strong>City: </strong>{{ restaurant.location }}</div> 
+      <div class=""><strong>Cuisine: </strong>{{ restaurant.cuisine_type }}</div>
 
     </div>
     
@@ -147,6 +145,8 @@
     </div>
 
   </div>
+
+
   <div class="Grid_6">
 
     <div class="insert_comment_section"><!------INSERT COMMENTS---->
@@ -244,8 +244,12 @@
 
 </div>
 
+
+
+
 <!---For tabs container-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 
 
 <script>
@@ -367,30 +371,35 @@ document.getElementById('bookmark-form').addEventListener('submit', function(eve
         };
         xhr.send(new FormData(event.target));
     });
-
     const dateElements = document.querySelectorAll('.date');
-  const timezoneOffset = new Date().getTimezoneOffset() * 60 * 1000; // get the timezone offset in milliseconds
+const timezoneOffset = new Date().getTimezoneOffset() * 60 * 1000; // get the timezone offset in milliseconds
 
-  dateElements.forEach((el) => {
-    const dateString = el.getAttribute('data-date');
-    const date = new Date(dateString);
-    const localDate = new Date(date.getTime() - timezoneOffset); // adjust the date to the local timezone
-    const now = new Date();
-    const diff = now - localDate;
+dateElements.forEach((el) => {
+  const dateString = el.getAttribute('data-date');
+  const date = new Date(dateString);
+  const localDate = new Date(date.getTime() - timezoneOffset); // adjust the date to the local timezone
+  const now = new Date();
+  const diff = now - localDate;
 
-    if (diff < 60 * 1000) {
-      el.innerHTML = 'just now';
-    } else if (diff < 60 * 60 * 1000) {
-      const minutes = Math.floor(diff / (60 * 1000));
-      el.innerHTML = `${minutes}m ago`;
-    } else if (diff < 24 * 60 * 60 * 1000) {
-      const hours = Math.floor(diff / (60 * 60 * 1000));
-      el.innerHTML = `${hours}h ago`;
-    } else {
-      const days = Math.floor(diff / (24 * 60 * 60 * 1000));
-      el.innerHTML = `${days}d ago`;
-    }
-  });
+  if (diff < 60 * 1000) {
+    el.innerHTML = 'just now';
+  } else if (diff < 60 * 60 * 1000) {
+    const minutes = Math.floor(diff / (60 * 1000));
+    el.innerHTML = `${minutes}m ago`;
+  } else if (diff < 24 * 60 * 60 * 1000) {
+    const hours = Math.floor(diff / (60 * 60 * 1000));
+    el.innerHTML = `${hours}h ago`;
+  } else if (diff < 30 * 24 * 60 * 60 * 1000) {
+    const days = Math.floor(diff / (24 * 60 * 60 * 1000));
+    el.innerHTML = `${days}d ago`;
+  } else if (diff < 365 * 24 * 60 * 60 * 1000) {
+    const months = Math.floor(diff / (30 * 24 * 60 * 60 * 1000));
+    el.innerHTML = `${months}mo ago`;
+  } else {
+    const years = Math.floor(diff / (365 * 24 * 60 * 60 * 1000));
+    el.innerHTML = `${years}y ago`;
+  }
+});
 
   function openTab(evt, tabName) {
   var i, tabcontent, tablinks;

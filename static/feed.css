@@ -1,0 +1,309 @@
+*{
+
+padding: 0;
+margin: 0;
+
+}
+
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+
+header {
+    background-color: #000;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 377px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: center bottom;
+    transition: width 0.2s ease-out;
+  }
+  
+  nav a:hover {
+    color: #98ece8;
+  }
+  
+  nav a:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 578px) {
+    .logo {
+      display: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    nav li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    nav a {
+      margin-left: 18px;
+      font-size: 13px;
+      text-align: center;
+      display: block;
+      padding: 10px 16px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .logo img {
+      height: 70px;
+    }
+    nav a {
+      font-size: 19px;
+      padding: 10px 20px;
+    }
+  }
+  
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    z-index: 1;
+    width: 200px;
+    border: 1px solid #ccc;
+  
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    margin-top: 20px;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #eee;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+
+  .upper {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 120px;
+    display: grid;
+    align-items: center;
+    border: solid rgb(39, 185, 76) 1px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    min-width: 414px;
+    max-width: 1263px;
+  }
+  
+  .selector {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  label {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  select{
+
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 90px;
+    margin-right: 10px;
+    
+  }
+
+    
+  
+  button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(39, 185, 76);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  @media (max-width: 500px) {
+    select{
+
+      width: 70px;
+      height: 30px;
+      margin-right: 2px;
+    }
+    label {
+      font-size: 10px;
+    }
+
+    button{
+
+      margin-left: 130px;
+      margin-top: 20px;
+    }
+
+
+    option{
+
+      font-size: 10px;
+
+    }
+  }
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    
+    background-color: #f4f4f4;
+}
+
+
+.Container {
+    max-width: 1263px;
+    margin: 0 auto;
+    padding: 18px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    
+}
+
+.restaurant-table {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.restaurant {
+  margin-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    width: 180px; /* Adjust the width as desired */
+    height: 200px; /* Adjust the height as desired */
+    padding: 10px;
+    margin-left: 30px;
+    background-color: rgb(241, 231, 234);
+    border-radius: 10px;
+    border: solid 1px rgb(27, 184, 87);
+    box-shadow: 1 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.restaurant:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 15px;
+}
+
+.restaurant-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cuisine {
+    font-size: 14px;
+    color: #777;
+}
+
+.restaurant-link {
+    text-decoration: none;
+}
