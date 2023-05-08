@@ -135,9 +135,12 @@ def feed():
     # Extract unique values from the "cuisine" column
     cuisine_select = restaurants_df['cuisines'].unique()
 
+    # Extract unique values from the "cuisine" column
+    location_select = restaurants_df['location'].unique()
+
 
     # Pass the feed data and updated cuisines list to the template
-    return render_template('feed.html', feed_data=feed_data, cuisine_select=cuisine_select)
+    return render_template('feed.html', feed_data=feed_data, cuisine_select=cuisine_select, location_select=location_select)
 
 
 

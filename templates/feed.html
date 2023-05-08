@@ -61,17 +61,9 @@
         
             <label for="location">Location:</label>
             <select id="location" name="location">
-              <option value="Mandaluyong City">Mandaluyong City</option>
-              <option value="Muntinlupa City">Muntinlupa City</option>
-              <option value="Tagaytay City">Tagaytay City</option>
-              <option value="San Juan City">San Juan City</option>
-              <option value="San Juan City">San Juan City</option>
-              <option value="Manila">Manila</option>
-              <option value="Parañaque City">Parañaque City</option>
-              <option value="Malabon City">Malabon City</option>
-              <option value="Valenzuela City">Valenzuela City</option>
-              <option value="Pateros City">Pateros City</option>
-              <option value="Makati City">Makati City</option>
+             {% for location in location_select %}
+              <option value="{{ location }}">{{ location }}</option>
+             {% endfor %}
             </select>
 
                       

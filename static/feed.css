@@ -153,7 +153,7 @@ header {
     border: solid rgb(39, 185, 76) 1px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     min-width: 414px;
-    max-width: 1263px;
+    
   }
   
   .selector {
@@ -173,8 +173,15 @@ header {
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 90px;
-    margin-right: 10px;
+    margin-right: 30px;
     
+  }
+
+  option{
+
+    font-size: 20px;
+    background-color: #c5c7c771;
+    font-family: 'Courier New', Courier, monospace;
   }
 
     
@@ -215,6 +222,8 @@ header {
   }
   
   
+
+  
   
   
 
@@ -239,7 +248,7 @@ body{
 
 
 .Container {
-    max-width: 1263px;
+   
     margin: 0 auto;
     padding: 18px;
     font-family: Arial, sans-serif;

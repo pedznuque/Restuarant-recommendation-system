@@ -17,9 +17,9 @@
       <ul>
         {% if 'username' in session %}
           <li><a href="{{ url_for('index') }}">HOME</a></li>
-          <li class="dropdown">
+          <li class="dropdowns">
             <a href="#" onclick="toggleDropdown()">{{ session['username'] }}!</a>
-            <div class="dropdown-menu">
+            <div class="dropdowns-menu">
               <a href="/profile">Profile settings</a>
               <a href="/bookmarks">Bookmarks</a>
               {% if session['is_admin'] %}
@@ -423,13 +423,14 @@ document.getElementById("defaultOpen").click();
 
 
 function toggleDropdown() {
-    var dropdown = document.querySelector('.dropdown-menu');
+    var dropdown = document.querySelector('.dropdowns-menu');
     dropdown.classList.toggle('show');
     dropdown.style.transition = "transform 0.2s ease-in-out, opacity 0.2s ease-in-out";
   }
 
 
-
+  
+ 
 
 </script>
 

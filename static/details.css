@@ -103,7 +103,7 @@ nav a:hover:before {
 
   
   
-  .dropdown-menu {
+  .dropdowns-menu {
     display: none;
     position: absolute;
     background-color: #fff;
@@ -119,18 +119,18 @@ nav a:hover:before {
     margin-top: 20px;
   }
   
-  .dropdown-menu a {
+  .dropdowns-menu a {
     display: block;
     padding: 10px;
     text-decoration: none;
     color: #000;
   }
   
-  .dropdown-menu a:hover {
+  .dropdowns-menu a:hover {
     background-color: #eee;
   }
   
-  .dropdown-menu.show {
+  .dropdowns-menu.show {
     display: block;
     opacity: 1;
     transform: translateY(0);
@@ -730,10 +730,14 @@ text-decoration: none;
                             display: none;
                             position: absolute;
                             z-index: 1;
+                            width: 80px;
+                            background-color: #98ece8;
                           }
                           
                           .dropdown-content .delete-btn {
                             color: rgb(0, 0, 0);
+                            border: none;
+                            background-color: rgba(0, 0, 0, 0);
                           }
                           
                           .dropdown.open .dropdown-content {
